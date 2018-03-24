@@ -237,3 +237,90 @@ input[type=submit] {
   background: #4aaaa5;
   border: 0 none;
 }
+/* Media Queries Section*/
+
+/* Defines Page Layout for Desktop */
+
+@media screen and (max-width: 980px){
+  .container {
+    width: 100%;
+  }
+
+  .main-section {
+    width: 70%;
+  }
+
+  .sidebar {
+    width: 30%;
+  }
+
+  .work {
+    clear: both;
+    width: 70%;
+  }
+
+}
+
+/* Defines Page Layout for Tablets */
+
+@media screen and (max-width: 768px){
+
+
+  .container {
+    width: 100%;
+  }
+
+  .main-section {
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .work {
+    position: relative;
+    float: left;
+    width: 274px;
+    margin: 20px 0 25px;
+    overflow: auto;
+  }
+
+  .sidebar {
+    clear: both;
+    width: 100%;
+    max-width: 750px;
+  }
+
+}
+
+/* Defines Page Layout for Mobile Phone */
+
+@media screen and (max-width: 640px){
+  .container {
+    width: 100%;
+  }
+
+  #logo {
+    clear: both;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  nav {
+    clear: both;
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+  }
+
+  .auth-image {
+    clear: both;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .work {
+  clear: both;
+  width: 100%;
+  max-width: 640px;
+  }
+
+}
