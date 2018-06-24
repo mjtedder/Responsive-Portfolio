@@ -41,7 +41,7 @@
             <textarea id="message" name="message" required="required"></textarea>
           </li>
         </ul>
-        <input type="submit">
+        <input type="submit" id="addUser">
       </form>
 
     </section>
@@ -63,6 +63,50 @@
       &copy; Copyright 2018 Matt Tedder
     </div>
   </footer>
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!--Link to Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <!--Script-->
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAKVp9T1572OrvC3ciXp5tXtiJMRSwpNO0",
+    authDomain: "user-sign-up-form.firebaseapp.com",
+    databaseURL: "https://user-sign-up-form.firebaseio.com",
+    projectId: "user-sign-up-form",
+    storageBucket: "user-sign-up-form.appspot.com",
+    messagingSenderId: "749465861683"
+  };
+  firebase.initializeApp(config);
+
+  //Creating a variable to reference the databse
+  var database = firebase.database();
+
+  //Initial Values
+  var name = "";
+  var email = "";
+  var message = "";
+
+  //Capture Button Click
+  $("#addUser").on("click", function(event) {
+    event.preventDefault();
+
+    name=$("#name").val().trim();
+    email=$("#email").val().trim();
+    message=$("#message").val().trim();
+
+    database.ref().set({
+      name: name,
+      email: email,
+      message: message
+    });
+  
+  });
+
+
+</script>
 </body>
 
 </html>
